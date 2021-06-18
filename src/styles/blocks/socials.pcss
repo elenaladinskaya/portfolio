@@ -1,0 +1,23 @@
+.socials {
+  display: flex;
+  align-items: center;
+}
+
+.socials__item {
+  margin-right: 35px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.socials__icon {
+  fill: $text-color;
+  width: 25px;
+  max-height: 25px;
+  transition: fill .3s;
+
+  &:hover {
+    fill: $links-hcolor;
+  }
+}
