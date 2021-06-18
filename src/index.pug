@@ -49,3 +49,32 @@ block content
           .about__text-info 
             p Я занимаюсь разработкой современных сайтов и приложений. #[br] Мне нравится делать интересные и современные проекты.
           .about__quote Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+  .middle-section 
+    section.values 
+      .container 
+        .values__title
+          h2.values__title-text Чем я могу быть полезна вам
+          .values__content 
+            p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .values__widget 
+          - 
+            const skillsCat = [
+              ['Front-end', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
+              ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
+              ];
+          ul.skills 
+            each category in skillsCat 
+              li.skills__item 
+                .skills-row 
+                  .skills-row__title #{category[0]}
+                  ul.skills-row__list 
+                    each skill in category[1] 
+                      li.skills-row__item
+                        .skill 
+                          svg(viewBox="0 0 100 100").skill__circle-shape
+                            circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer-under
+                            circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform="rotate(180 50 50)").skill__circle.skill__circle--layer-above
+                            linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0%')
+                              stop(offset='0%' stop-color='#7C00EA')            
+                              stop(offset='100%' stop-color='#4A00ED') 
+                          .skill__title #{skill}           
