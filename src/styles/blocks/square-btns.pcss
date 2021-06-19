@@ -1,0 +1,30 @@
+.square-btns__item {
+  width: 53px;
+  height: 53px;
+  background-color: #252830;
+
+  &--next {
+    &::before {
+      content: svg-load('arrow-down.svg', fill=#717883, width=100%, height=100%);
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+      transform: rotate(-180deg);
+    }
+  }
+
+  &--prev {
+    &::before {
+      content: svg-load('arrow-down.svg', fill=#717883, width=100%, height=100%);
+      width: 18px;
+      height: 18px;
+      display: inline-block;
+    }
+  }
+
+  &:hover {
+    &::before {
+      content: svg-load('arrow-down.svg', fill=$text-color, width=100%, height=100%);
+    }
+  }
+}

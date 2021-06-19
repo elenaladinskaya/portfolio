@@ -50,10 +50,15 @@ block content
             p Я занимаюсь разработкой современных сайтов и приложений. #[br] Мне нравится делать интересные и современные проекты.
           .about__quote Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
   .middle-section 
+    .triangles.middle-section__triangles-top
+      svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-left 
+        polygon(points="0,0 0,100 1000,100")
+      svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-right
+        polygon(points="0,100 1000,100 1000,0")
     section.values 
       .container 
         .values__title
-          h2.values__title-text Чем я могу быть полезна вам
+          h3.values__title-text Чем я могу быть полезна вам
           .values__content 
             p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         .values__widget 
@@ -77,4 +82,37 @@ block content
                             linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0%')
                               stop(offset='0%' stop-color='#7C00EA')            
                               stop(offset='100%' stop-color='#4A00ED') 
-                          .skill__title #{skill}           
+                          .skill__title #{skill}  
+    section.works 
+      .container 
+        h2.section-title.works__section-title Мои работы
+        .works__content 
+          .works-preview
+            .works-preview__pictures(data-slide="2")
+              +image("content/portfolio/site1.jpg", "works-preview__img")
+              .works-preview__thumbs 
+                ul.thumbs 
+                  - for (let i = 5; i > 0; i--)
+                    li.thumbs__item 
+                      a(href="#").thumbs__link
+                        +image(`content/portfolio/site${i}.jpg`, "thumbs__img")
+              .works-preview__btns 
+                .square-btns 
+                  button(type="button").square-btns__item.square-btns__item--next
+                  button(type="button").square-btns__item.square-btns__item--prev
+            .works-preview__info 
+              - const tags = ['HTML', 'CSS', 'Javascript'];
+              ul.tags
+                each tag in tags
+                  li.tags__item
+                    .tag= tag
+              h3.works-preview__title Сайт школы образования
+              .works-preview__desc
+                p Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+              a(href="#", target="_blanc").iconed-link Посмотреть сайт
+
+    .triangles.middle-section__triangles-bottom.triangles--pointed-down
+      svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-left 
+        polygon(points="0,0 0,100 1000,100")
+      svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-right
+        polygon(points="0,100 1000,100 1000,0")
