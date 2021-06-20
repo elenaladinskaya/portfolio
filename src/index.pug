@@ -92,7 +92,7 @@ block content
               +image("content/portfolio/site1.jpg", "works-preview__img")
               .works-preview__thumbs 
                 ul.thumbs 
-                  - for (let i = 5; i > 0; i--)
+                  - for (let i = 4; i > 0; i--)
                     li.thumbs__item 
                       a(href="#").thumbs__link
                         +image(`content/portfolio/site${i}.jpg`, "thumbs__img")
@@ -142,3 +142,31 @@ block content
                       .user-display__data
                         .user-display__name= user[1]
                         .user-display__occupation= user[2] 
+  footer.footer
+    .container.footer__container 
+      .footer__copyright
+        .footer__date &copy; 2021
+        .footer__userinfo
+          .footer__name Елена Ладинская
+          .footer__data-text Личный сайт #[br] веб-разработчика 
+      .footer__data 
+        nav.menu.menu--theme-light.footer__data-menu
+          ul.menu__list
+              for item in menuItems 
+                li.menu__item 
+                  a(href="#").menu__link #{item}
+        .footer__data-content 
+          .footer__data-col
+            .footer__data-text
+              p Этот сайт я сделала в рамках обучения в Школе онлайн образования Loftschool
+            .footer__data-socials
+              ul.socials.socials--roud-borders 
+                for item in socials 
+                  li.socials__item 
+                    a(href="#").socials__link   
+                      +icon(item, "socials__icon")
+          .footer__data-col
+            .text-quote 
+              .text-quote__text 
+                p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+              .text-quote__author Martin Golding
