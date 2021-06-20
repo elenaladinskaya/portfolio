@@ -1,7 +1,7 @@
 {
   "text-color": "#464E62",
   "links-color": "#586ED3",
-  "links-hcolor": "#717883",
+  "links-hcolor": "#000",
   "errors-color": "#cd1515",
   "bp-desktop-hd": "1800px",
   "bp-desktop": "1200px",

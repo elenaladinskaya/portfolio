@@ -1,5 +1,5 @@
 .works {
-  padding-bottom: 74px;
+  padding-bottom: 112px;
 }
 
 .works__section-title {
@@ -11,7 +11,7 @@
 }
 
 .works-preview__pictures {
-  width: 975px;
+  max-width: 975px;
   position: relative;
 
   &::before {
@@ -23,6 +23,7 @@
     top: 6%;
     line-height: 1;
     right: -160px;
+    z-index: -10;
   }
 }
 
@@ -35,6 +36,7 @@
   right: 0;
   bottom: 0;
   width: 178px;
+  z-index: 10;
 }
 
 .works-preview__btns {
@@ -57,7 +59,7 @@
 
 .works-preview__desc {
   font-weight: 600;
-  line-height: 1.8;
+  line-height: 1.9;
   color: rgba($text-color, .8);
-  margin-bottom: 48px;
+  margin-bottom: 42px;
 }

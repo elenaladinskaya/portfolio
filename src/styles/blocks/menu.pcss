@@ -1,6 +1,17 @@
 .menu {
   &--theme-light {
     color: #fff;
+
+    & {
+      .menu__link {
+        transition: .2s;
+
+        &:hover {
+          text-decoration: none;
+          color: hsla(0, 0%, 100%, .45);
+        }
+      }
+    }
   }
 }
 
@@ -21,6 +32,7 @@
   white-space: nowrap;
 
   &:hover {
+    color: $links-hcolor;
     text-decoration: underline;
   }
 }
