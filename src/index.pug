@@ -110,9 +110,35 @@ block content
               .works-preview__desc
                 p Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
               a(href="#", target="_blanc").iconed-link Посмотреть сайт
-
     .triangles.middle-section__triangles-bottom.triangles--pointed-down
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-left 
         polygon(points="0,0 0,100 1000,100")
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-right
         polygon(points="0,100 1000,100 1000,0")
+  section.reviews 
+    .container 
+      .slider 
+        .slider__header 
+          h2.section-title.reviews__section-title Что обо мне говорят
+          .slider__btns
+            button(type="button").slider__btn.round-btn.round-btn--pointer--right
+            button(type="button").slider__btn.round-btn.round-btn--pointer--left
+        ul.slider__content 
+          -                  
+            const users = [
+              ['content/avatars/avatar1.jpg', 'Ковальчук Дмитрий', 'Основатель Loftschool', 'Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!'],
+              ['content/avatars/avatar2.jpg', 'Владимир Сабанцев', 'Преподаватель', 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах']
+            ];    
+          each user in users
+            li.slider__item
+              .quote
+                .quote__text 
+                  p= user[3]
+                .quote__user
+                    .user-display 
+                      .user-display__avatar 
+                        .user-display__avatar-style 
+                          +image(user[0], "user-display__img")
+                      .user-display__data
+                        .user-display__name= user[1]
+                        .user-display__occupation= user[2] 

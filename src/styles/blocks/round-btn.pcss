@@ -1,0 +1,33 @@
+.round-btn {
+  width: 53px;
+  height: 53px;
+  border: 2px solid $text-color;
+  border-radius: 50%;
+  transition: border .3s;
+
+  &--pointer--right {
+    &::before {
+      content: svg-load('arrow-down.svg', fill=$text-color, width=100%, height=100%);
+      width: 17px;
+      display: inline-block;
+      transform: rotate(90deg);
+    }
+  }
+
+  &--pointer--left {
+    &::before {
+      content: svg-load('arrow-down.svg', fill=$text-color, width=100%, height=100%);
+      width: 17px;
+      display: inline-block;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &:hover {
+    border-color: #717883;
+
+    &::before {
+      content: svg-load('arrow-down.svg', fill=#717883, width=100%, height=100%);
+    }
+  }
+}
