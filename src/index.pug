@@ -17,7 +17,7 @@ block content
           ul.socials 
               for item in socials 
                 li.socials__item 
-                  a(href="#").socials__link   
+                  a(href="#", target="_blank").socials__link   
                    +icon(item, "socials__icon")
         .userinfo 
             .userinfo__title Личный сайт#[br]веб-разработчика
@@ -27,28 +27,29 @@ block content
             button.scroll-down-btn Скролл
     section.about
       .container.about__container
-        .about__user 
-          .user 
-            .user__avatar 
-              .user__avatar-style
-                +image('content/user.jpg', 'user__avatar-pic')
-            - 
-              const userInfo = [
-                ['Проживаю', 'Санкт-Петербург'],
-                ['Возраст', '32 года'],
-                ['Родилась', '12 марта 1989']
-              ];
-            table.user__data 
-              for item in userInfo 
-                tr.user__data-row 
-                  td.user__data-title #{item[0]}
-                  td.user__data-content #{item[1]}
-        .about__content
-          .about__desc Привет, меня зовут
-          h2.about__title Елена Ладинская
-          .about__text-info 
-            p Я занимаюсь разработкой современных сайтов и приложений. #[br] Мне нравится делать интересные и современные проекты.
-          .about__quote Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .about__wrap
+          .about__user 
+            .user 
+              .user__avatar 
+                .user__avatar-style
+                  +image('content/user.jpg', 'user__avatar-pic')
+              - 
+                const userInfo = [
+                  ['Проживаю', 'Санкт-Петербург'],
+                  ['Возраст', '32 года'],
+                  ['Родилась', '12 марта 1989']
+                ];
+              table.user__data 
+                for item in userInfo 
+                  tr.user__data-row 
+                    td.user__data-title #{item[0]}
+                    td.user__data-content #{item[1]}
+          .about__content
+            .about__desc Привет, меня зовут
+            h2.about__title Елена Ладинская
+            .about__text-info 
+              p Я занимаюсь разработкой современных сайтов и приложений. #[br] Мне нравится делать интересные и современные проекты.
+            .about__quote Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
   .middle-section 
     .triangles.middle-section__triangles-top
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-left 
@@ -64,8 +65,42 @@ block content
         .values__widget 
           - 
             const skillsCat = [
-              ['Front-end', ['HTML5', 'CSS3', 'Javascript', 'Jquery и Vue.js']],
-              ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']]
+              ['Front-end', [
+                {
+                  name: 'HTML5',
+                  val: '25'
+                }, 
+                {
+                  name: 'CSS3',
+                  val: '15'
+                },
+                {
+                  name: 'Javascript',
+                  val: '75'
+                },
+                {
+                  name: 'Jquery и Vue.js',
+                  val: '25'
+                }
+                ]],
+              ['Workflow', [
+                {
+                  name: 'GIT',
+                  val: '15'
+                },
+                {
+                  name: 'Terminal',
+                  val: '25'
+                },
+                {
+                  name: 'Gulp',
+                  val: '50'
+                },
+                {
+                  name: 'Webpack',
+                  val: '45'
+                }
+                ]]
               ];
           ul.skills 
             each category in skillsCat 
@@ -82,9 +117,9 @@ block content
                             linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0%')
                               stop(offset='0%' stop-color='#7C00EA')            
                               stop(offset='100%' stop-color='#4A00ED') 
-                          .skill__title #{skill}  
+                          .skill__title #{skill.name}  
     section.works 
-      .container 
+      .container.works__container 
         h2.section-title.works__section-title Мои работы
         .works__content 
           .works-preview
@@ -109,14 +144,14 @@ block content
               h3.works-preview__title Сайт школы образования
               .works-preview__desc
                 p Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-              a(href="#", target="_blanc").iconed-link Посмотреть сайт
+              a(href="#", target="_blank").iconed-link Посмотреть сайт
     .triangles.middle-section__triangles-bottom.triangles--pointed-down
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-left 
         polygon(points="0,0 0,100 1000,100")
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-right
         polygon(points="0,100 1000,100 1000,0")
   section.reviews 
-    .container 
+    .container.reviews__container 
       .slider 
         .slider__header 
           h2.section-title.reviews__section-title Что обо мне говорят
@@ -143,7 +178,7 @@ block content
                         .user-display__name= user[1]
                         .user-display__occupation= user[2] 
   footer.footer
-    .container.footer__container 
+    .container.footer__container.container--footer 
       .footer__copyright
         .footer__date &copy; 2021
         .footer__userinfo
@@ -163,7 +198,7 @@ block content
               ul.socials.socials--roud-borders 
                 for item in socials 
                   li.socials__item 
-                    a(href="#").socials__link   
+                    a(href="#", target="_blank").socials__link   
                       +icon(item, "socials__icon")
           .footer__data-col
             .text-quote 
