@@ -90,7 +90,7 @@ module.exports = (env, argv) => {
       admin: "./src/admin/main.js",
     },
     output: {
-      path: path.resolve(__dirname, "./docs"),
+      path: path.resolve(__dirname, "./dist"),
       filename: "[name].[hash].build.js",
       publicPath: isProductionBuild ? publicPath : "",
       chunkFilename: "[chunkhash].js",
