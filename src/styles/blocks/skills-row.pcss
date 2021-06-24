@@ -1,10 +1,22 @@
 .skills-row__list {
   display: flex;
   margin-bottom: 36px;
+
+  @include desktop {
+    flex-wrap: wrap;
+  }
 }
 
 .skills-row__item {
   margin-right: 36px;
+
+  @include desktop {
+    margin-right: 26px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
 
 .skills-row__title {

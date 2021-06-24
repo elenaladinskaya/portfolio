@@ -1,32 +1,48 @@
 .footer {
   background: #252830;
   color: rgba(#fff, .45);
-  padding: 73px 0;
+  padding: 74px 0;
   line-height: 1.8;
 }
 
 .footer__container {
   display: flex;
   justify-content: space-between;
+
+  @include desktop {
+    justify-content: flex-start;
+  }
 }
 
 .footer__copyright {
   display: flex;
-  align-items: flex-start;
+  justify-content: space-between;
   color: $text-color;
-  width: 27%;
+  width: 25%;
+
+  @include desktop {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 
 .footer__date {
   font-size: 48px;
   font-weight: 600;
   white-space: nowrap;
-  margin-right: 56px;
   line-height: 1;
+
+  @include desktop {
+    margin-bottom: 14px;
+  }
 }
 
 .footer__userinfo {
   width: 36%;
+
+  @include desktop {
+    width: 52%;
+  }
 }
 
 .footer__name {
@@ -57,4 +73,9 @@
 .footer__data-text {
   padding-right: 100px;
   margin-bottom: 40px;
+
+  @include desktop {
+    padding-right: 0;
+    margin-bottom: 30px;
+  }
 }

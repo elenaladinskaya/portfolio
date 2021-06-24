@@ -1,5 +1,4 @@
 .values {
-  background: url('~images/content/bg/backpack.png') center left no-repeat;
   padding: 57px 0;
 }
 
@@ -8,14 +7,36 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 4%;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    background: url('~images/content/decor/backpack.png') left bottom / contain no-repeat;
+    display: block;
+    width: 58%;
+    height: 68%;
+    bottom: 5%;
+    left: -20%;
+  }
 }
 
 .values__title {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
   margin-bottom: 80px;
+
+  @include desktop {
+    margin-bottom: 96px;
+  }
+}
+
+.values__title-container {
+  width: 38%;
+
+  @include desktop {
+    width: 52%;
+  }
 }
 
 .values__title-text {
@@ -23,16 +44,32 @@
   font-weight: 700;
   color: $text-color;
   margin-bottom: 56px;
-  width: 40%;
+
+  @include desktop {
+    margin-bottom: 40px;
+  }
 }
 
 .values__content {
   font-weight: 600;
   line-height: 1.8;
   color: rgba($text-color, .8);
-  width: 42%;
 }
 
 .values__widget {
+  display: flex;
+  justify-content: flex-end;
   padding-right: 5%;
+
+  @include desktop {
+    padding-right: 0;
+  }
+}
+
+.values__widget-container {
+  width: 66%;
+
+  @include desktop {
+    width: 70%;
+  }
 }

@@ -1,7 +1,7 @@
 .slider__header {
   display: flex;
   align-items: center;
-  margin-bottom: 76px;
+  margin-bottom: 76PX;
 }
 
 .slider__btn {
@@ -16,6 +16,10 @@
   display: flex;
   padding-right: 26%;
   padding: 0 23% 0 5%;
+
+  @include desktop {
+    padding: 0 0 0 7%;
+  }
 }
 
 .slider__item {

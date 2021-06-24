@@ -15,11 +15,17 @@
 
 .works-preview {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .works-preview__pictures {
-  max-width: 975px;
+  width: 66%;
   position: relative;
+
+  @include desktop {
+    width: 57%;
+  }
 
   &::before {
     content: attr(data-slide);
@@ -31,6 +37,11 @@
     line-height: 1;
     right: -160px;
     z-index: -10;
+
+    @include desktop {
+      font-size: 300px;
+      right: -120px;
+    }
   }
 }
 
@@ -44,6 +55,10 @@
   bottom: 0;
   width: 178px;
   z-index: 10;
+
+  @include desktop {
+    width: 116px;
+  }
 }
 
 .works-preview__btns {
@@ -53,8 +68,11 @@
 }
 
 .works-preview__info {
-  padding: 0 0 0 160px;
-  flex: 1;
+  width: 24%;
+
+  @include desktop {
+    width: 32%;
+  }
 }
 
 .works-preview__title {

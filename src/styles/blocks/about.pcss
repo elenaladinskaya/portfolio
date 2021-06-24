@@ -9,16 +9,28 @@
 .about__wrap {
   display: flex;
   width: 66%;
+
+  @include desktop {
+    width: 100%;
+  }
 }
 
 .about__user {
   width: 42%;
   margin-right: 50px;
+
+  @include desktop {
+    margin-right: 0;
+  }
 }
 
 .about__content {
   flex: 1;
   padding-top: 9px;
+
+  @include desktop {
+    padding-right: 8%;
+  }
 }
 
 .about__desc {
@@ -32,14 +44,14 @@
   font-size: 36px;
   font-weight: 700;
   color: $text-color;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
 }
 
 .about__text-info {
   font-weight: 600;
   line-height: 1.9;
   color: rgba(70, 78, 98, 0.8);
-  margin-bottom: 78px;
+  margin-bottom: 92px;
 }
 
 .about__quote {
