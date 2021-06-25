@@ -1,6 +1,6 @@
 .socials {
-  display: flex;
   align-items: center;
+  display: flex;
 
   &--roud-borders {
     .socials__item {
@@ -40,6 +40,10 @@
 
 .socials__item {
   margin-right: 35px;
+
+  @include tablets {
+    margin-right: 38px;
+  }
 
   &:last-child {
     margin-right: 0;

@@ -1,4 +1,8 @@
 .menu {
+  @include tablets {
+    display: none;
+  }
+
   &--theme-light {
     color: #fff;
 
@@ -11,6 +15,24 @@
           color: hsla(0, 0%, 100%, .45);
         }
       }
+    }
+  }
+
+  &--vertical {
+    display: block;
+
+    .menu__list {
+      flex-direction: column;
+    }
+
+    .menu__item {
+      margin-right: 0;
+      margin-bottom: 23px;
+    }
+
+    .menu__link {
+      font-size: 18px;
+      font-weight: 600;
     }
   }
 }
