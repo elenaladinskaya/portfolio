@@ -4,6 +4,12 @@
   align-items: center;
 }
 
+.header__menu {
+  @include tablets {
+    display: none;
+  }
+}
+
 .header__socials {
   @include tablets {
     &:nth-child(3) {

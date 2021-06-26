@@ -8,8 +8,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @include tablets {
+    height: 100%;
+    padding: 150px 0;
+  }
 }
 
 .reviews__section-title {
-  margin-right: 116px;
+  margin-right: 8%;
+
+  @include tablets {
+    margin-right: 4%;
+  }
+
+  @media (max-width: 550px) {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 }

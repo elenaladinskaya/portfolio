@@ -4,9 +4,18 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 57px 0 127px;
+
+  @include tablets {
+    justify-content: flex-start;
+    padding: 66px 0;
+  }
 }
 
 .hero__bottom-btns {
   display: flex;
   justify-content: center;
+
+  @include tablets {
+    display: none;
+  }
 }

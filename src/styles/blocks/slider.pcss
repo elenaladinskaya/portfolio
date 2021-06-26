@@ -2,10 +2,23 @@
   display: flex;
   align-items: center;
   margin-bottom: 76PX;
+
+  @include tablets {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .slider__btn {
   margin-right: 28px;
+
+  @include tablets {
+    margin-right: 34px;
+  }
 
   &:last-child {
     margin-right: 0;
@@ -20,11 +33,32 @@
   @include desktop {
     padding: 0 0 0 7%;
   }
+
+  @include tablets {
+    padding-left: 4%;
+  }
+
+
+  @media (max-width: 550px) {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+  }
 }
 
 .slider__item {
   width: 36%;
-  margin: 0 120px 0 0;
+  margin-right: 120px;
+
+  @include tablets {
+    width: 50%;
+    margin-right: 8%;
+  }
+
+  @media (max-width: 550px) {
+    margin-right: 0;
+    margin-bottom: 40px;
+  }
 
   &:last-child {
     margin-right: 0;

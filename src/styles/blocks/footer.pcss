@@ -3,6 +3,18 @@
   color: rgba(#fff, .45);
   padding: 74px 0;
   line-height: 1.8;
+
+  @include tablets {
+    padding: 64px 0;
+
+    .menu__item {
+      margin-right: 0;
+    }
+
+    .menu__list {
+      justify-content: space-between;
+    }
+  }
 }
 
 .footer__container {
@@ -12,17 +24,25 @@
   @include desktop {
     justify-content: flex-start;
   }
+
+  @include tablets {
+    justify-content: space-between;
+  }
 }
 
 .footer__copyright {
   display: flex;
   justify-content: space-between;
   color: $text-color;
-  width: 25%;
+  width: 26%;
 
   @include desktop {
     flex-direction: column;
     justify-content: flex-start;
+  }
+
+  @include tablets {
+    width: 40%;
   }
 }
 
@@ -38,10 +58,10 @@
 }
 
 .footer__userinfo {
-  width: 36%;
+  width: 46%;
 
   @include desktop {
-    width: 52%;
+    width: 56%;
   }
 }
 
@@ -55,27 +75,50 @@
 
 .footer__data {
   width: 66%;
+
+  @include tablets {
+    padding-left: 3%;
+  }
 }
 
 .footer__data-menu {
   margin-bottom: 50px;
+
+  @include tablets {
+    margin-bottom: 40px;
+
+    .menu__item {
+      justify-content: space-between;
+    }
+  }
 }
 
 .footer__data-content {
   display: flex;
   justify-content: space-between;
+
+  @include tablets {
+    flex-direction: column;
+  }
 }
 
 .footer__data-col {
   width: 48%;
+
+  @include tablets {
+    width: 94%;
+    margin-bottom: 56px;
+  }
 }
 
 .footer__data-text {
-  padding-right: 100px;
   margin-bottom: 40px;
 
   @include desktop {
-    padding-right: 0;
     margin-bottom: 30px;
+  }
+
+  @include tablets {
+    margin-bottom: 26px;
   }
 }
