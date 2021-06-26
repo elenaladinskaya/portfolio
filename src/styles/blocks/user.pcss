@@ -11,6 +11,11 @@
     justify-content: flex-start;
     margin-bottom: 8px;
   }
+
+  @include phones {
+    justify-content: center;
+    margin-bottom: 34px;
+  }
 }
 
 .user__avatar-style {
@@ -24,6 +29,11 @@
     height: 220px;
     flex-shrink: 0; // картинка не сжимается
   }
+
+  @include phones {
+    width: 170PX;
+    height: 170PX;
+  }
 }
 
 .user__data {
@@ -33,6 +43,11 @@
   @include tablets {
     width: 92%;
     border-spacing: 0 11px;
+  }
+
+  @include phones {
+    width: 100%;
+    border-spacing: 14px 9px;
   }
 }
 

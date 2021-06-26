@@ -43,6 +43,12 @@ body {
 
   @include phones {
     width: 85%;
+
+    &.works__container {
+      @include phones {
+        width: 100%;
+      }
+    }
   }
 }
 

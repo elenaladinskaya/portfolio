@@ -2,6 +2,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @include phones {
+    .header__socials {
+      display: none;
+    }
+  }
 }
 
 .header__menu {
@@ -11,6 +17,8 @@
 }
 
 .header__socials {
+  display: none;
+
   @include tablets {
     &:nth-child(3) {
       padding-right: 7%;

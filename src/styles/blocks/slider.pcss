@@ -11,6 +11,10 @@
     flex-direction: column;
     justify-content: center;
   }
+
+  @include phones {
+    margin-bottom: 60px;
+  }
 }
 
 .slider__btn {
@@ -29,6 +33,7 @@
   display: flex;
   padding-right: 26%;
   padding: 0 23% 0 5%;
+  overflow: hidden;
 
   @include desktop {
     padding: 0 0 0 7%;
@@ -44,9 +49,14 @@
     align-items: center;
     padding-left: 0;
   }
+
+  @include phones {
+    flex-direction: row;
+  }
 }
 
 .slider__item {
+  flex-shrink: 0;
   width: 36%;
   margin-right: 120px;
 
@@ -58,6 +68,10 @@
   @media (max-width: 550px) {
     margin-right: 0;
     margin-bottom: 40px;
+  }
+
+  @include phones {
+    width: 100%;
   }
 
   &:last-child {

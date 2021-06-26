@@ -2,6 +2,10 @@
   padding-left: 20px;
   position: relative;
 
+  @include phones {
+    padding-left: 0;
+  }
+
   &::before {
     content: svg-load("quote.svg", fill=#DDE3EC, width=100%, height=100%);
     display: block;
@@ -14,6 +18,10 @@
       top: 4%;
       right: 97%;
     }
+
+    @include phones {
+      display: none;
+    }
   }
 }
 
@@ -22,4 +30,8 @@
   line-height: 1.9;
   color: rgba($text-color, .6);
   margin-bottom: 32px;
+
+  @include phones {
+    margin-bottom: 18px;
+  }
 }

@@ -9,6 +9,10 @@
     height: 100%;
     padding: 20% 0;
   }
+
+  @include phones {
+    padding: 26% 0 40% 4%;
+  }
 }
 
 .about__wrap {
@@ -17,6 +21,11 @@
 
   @include desktop {
     width: 100%;
+  }
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -30,6 +39,13 @@
 
   @include tablets {
     width: 46%;
+  }
+
+  @include phones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
   }
 }
 
@@ -56,6 +72,10 @@
   @include tablets {
     margin-bottom: 10px;
   }
+
+  @include phones {
+    margin-bottom: 4px;
+  }
 }
 
 .about__title {
@@ -67,6 +87,10 @@
   @include tablets {
     margin-bottom: 36px;
   }
+
+  @include phones {
+    line-height: 1.2;
+  }
 }
 
 .about__text-info {
@@ -77,6 +101,10 @@
 
   @include tablets {
     margin-bottom: 36px;
+  }
+
+  @include phones {
+    margin-bottom: 64PX;
   }
 }
 
@@ -97,6 +125,12 @@
     @include tablets {
       content: '*';
       font-size: 54px;
+    }
+
+    @include phones {
+      font-size: 42px;
+      left: -36px;
+      top: -16px;
     }
   }
 }

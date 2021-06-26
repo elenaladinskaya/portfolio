@@ -15,6 +15,15 @@
       justify-content: space-between;
     }
   }
+
+  @include phones {
+    padding: 70px 0 100px 0;
+
+    .menu__list {
+      padding-right: 30%;
+      flex-wrap: wrap;
+    }
+  }
 }
 
 .footer__container {
@@ -27,6 +36,10 @@
 
   @include tablets {
     justify-content: space-between;
+  }
+
+  @include phones {
+    flex-direction: column
   }
 }
 
@@ -44,16 +57,24 @@
   @include tablets {
     width: 40%;
   }
+
+  @include phones {
+    width: 100%;
+  }
 }
 
 .footer__date {
-  font-size: 48px;
+  font-size: 48PX;
   font-weight: 600;
   white-space: nowrap;
   line-height: 1;
 
   @include desktop {
     margin-bottom: 14px;
+  }
+
+  @include phones {
+    margin-bottom: 18px;
   }
 }
 
@@ -63,6 +84,11 @@
   @include desktop {
     width: 56%;
   }
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 48px;
+  }
 }
 
 .footer__name {
@@ -71,6 +97,14 @@
   color: #fff;
   text-transform: uppercase;
   margin-bottom: 18px;
+
+  @include phones {
+    margin-bottom: 0;
+  }
+}
+
+.footer__text {
+  padding-right: 10%;
 }
 
 .footer__data {
@@ -78,6 +112,11 @@
 
   @include tablets {
     padding-left: 3%;
+  }
+
+  @include phones {
+    width: 100%;
+    padding-left: 0;
   }
 }
 
@@ -89,6 +128,17 @@
 
     .menu__item {
       justify-content: space-between;
+    }
+  }
+
+  @include phones {
+    .menu__item {
+      margin-right: 10%;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-right: 10%;
+      }
     }
   }
 }
@@ -108,6 +158,15 @@
   @include tablets {
     width: 94%;
     margin-bottom: 56px;
+  }
+
+  @include phones {
+    width: 100%;
+    margin-bottom: 20px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
 
