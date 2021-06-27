@@ -1,25 +1,30 @@
 .quote {
-  padding-left: 20px;
+  padding-left: 20%;
   position: relative;
 
-  @include phones {
+  @include tablets {
+    padding-left: 12%;
+  }
+
+  @media (max-width: 566px) {
     padding-left: 0;
   }
 
   &::before {
     content: svg-load("quote.svg", fill=#DDE3EC, width=100%, height=100%);
     display: block;
-    width: 18%;
+    width: 16%;
     height: auto;
     position: absolute;
-    right: 100%;
+    top: 0;
+    left: 0;
 
     @include tablets {
-      top: 4%;
-      right: 97%;
+      top: 3%;
+      width: 10%;
     }
 
-    @include phones {
+    @media (max-width: 566px) {
       display: none;
     }
   }
