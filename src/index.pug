@@ -79,61 +79,7 @@ block content
               p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
         .values__widget
           .values__widget-container 
-            - 
-              const skillsCat = [
-                ['Front-end', [
-                  {
-                    name: 'HTML5',
-                    val: '25'
-                  }, 
-                  {
-                    name: 'CSS3',
-                    val: '15'
-                  },
-                  {
-                    name: 'Javascript',
-                    val: '75'
-                  },
-                  {
-                    name: 'Jquery и Vue.js',
-                    val: '25'
-                  }
-                  ]],
-                ['Workflow', [
-                  {
-                    name: 'GIT',
-                    val: '15'
-                  },
-                  {
-                    name: 'Terminal',
-                    val: '25'
-                  },
-                  {
-                    name: 'Gulp',
-                    val: '50'
-                  },
-                  {
-                    name: 'Webpack',
-                    val: '45'
-                  }
-                  ]]
-                ];
-            ul.skills 
-              each category in skillsCat 
-                li.skills__item 
-                  .skills-row 
-                    .skills-row__title #{category[0]}
-                    ul.skills-row__list 
-                      each skill in category[1] 
-                        li.skills-row__item
-                          .skill 
-                            svg(viewBox="0 0 100 100").skill__circle-shape
-                              circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer-under
-                              circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform="rotate(180 50 50)").skill__circle.skill__circle--layer-above
-                              linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0%')
-                                stop(offset='0%' stop-color='#7C00EA')            
-                                stop(offset='100%' stop-color='#4A00ED') 
-                            .skill__title #{skill.name}  
+            #skills-component  
     section#works.works 
       .container.works__container 
         h2.section-title.works__section-title Мои работы
