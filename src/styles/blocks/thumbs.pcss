@@ -1,8 +1,19 @@
-.thumbs__link:hover {
-  .thumbs__img {
-    outline: 3px solid #DC9322;
-    filter: contrast(.7);
+.thumbs__item {
+  &.active {
+    .thumbs__link {
+
+      .thumbs__img {
+        outline: 3px solid #DC9322;
+        filter: contrast(.7);
+      }
+    }
   }
+}
+
+.thumbs__link {
+  display: block;
+  cursor: auto;
+  padding: 0;
 }
 
 .thumbs__img {

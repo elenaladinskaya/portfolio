@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Сайт школы образования",
+    "skills": "HTML, CSS, Javascript",
+    "photo": "site1.jpg",
+    "link": "//google.ru",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iste nisi nobis eum quia iure eos deleniti laudantium, cupiditate quo? Delectus incidunt laudantium deserunt tempora minus quas non nostrum pariatur?"
+  },
+  {
+    "id": 2,
+    "title": "Городской портал",
+    "skills": "HTML, CSS, Javascript, Vue.js",
+    "photo": "site2.jpg",
+    "link": "//ya.ru",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta perferendis doloremque blanditiis nostrum voluptatibus!"
+  },
+  {
+    "id": 3,
+    "title": "Сайт турфирмы",
+    "skills": "HTML, CSS",
+    "photo": "site3.jpg",
+    "link": "//mail.ru",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum at quas error id quia obcaecati distinctio minus praesentium doloribus quidem ea sapiente amet enim rem molestiae, natus fuga vitae dicta?"
+  },
+  {
+    "id": 4,
+    "title": "Сайт об авто",
+    "skills": "HTML, CSS, Javascript, Vue.js, JQuery",
+    "photo": "site4.jpg",
+    "link": "//loftschool.ru",
+    "desc": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur incidunt corrupti accusantium in hic blanditiis itaque, ipsum ipsa iusto esse earum quidem aliquid a. Consequuntur eos qui fugiat tenetur dolorem."
+  }
+]

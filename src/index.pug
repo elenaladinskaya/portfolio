@@ -83,30 +83,8 @@ block content
     section#works.works 
       .container.works__container 
         h2.section-title.works__section-title Мои работы
-        .works__content 
-          .works-preview
-            .works-preview__pictures(data-slide="2")
-              +image("content/portfolio/site1.jpg", "works-preview__img")
-              .works-preview__thumbs 
-                ul.thumbs 
-                  - for (let i = 4; i > 0; i--)
-                    li.thumbs__item 
-                      a(href="#").thumbs__link
-                        +image(`content/portfolio/site${i}.jpg`, "thumbs__img")
-              .works-preview__btns 
-                .square-btns 
-                  button(type="button").square-btns__button.square-btns__button--next
-                  button(type="button").square-btns__button.square-btns__button--prev
-            .works-preview__info 
-              - const tags = ['HTML', 'CSS', 'Javascript'];
-              ul.tags
-                each tag in tags
-                  li.tags__item
-                    .tag= tag
-              h3.works-preview__title Сайт школы образования
-              .works-preview__desc
-                p Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-              a(href="#", target="_blank").iconed-link Посмотреть сайт
+        .works__content
+          #preview-component
     .triangles.middle-section__triangles-bottom.triangles--pointed-down
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-left 
         polygon(points="0,0 0,100 1000,100")
