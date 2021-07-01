@@ -28,7 +28,6 @@ new Vue({
         }
       }
     }
-
   },
   computed: {
     slider() {

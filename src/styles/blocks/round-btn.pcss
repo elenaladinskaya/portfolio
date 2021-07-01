@@ -5,7 +5,8 @@
   border-radius: 50%;
   transition: border .3s;
 
-  &--pointer--right {
+  &--pointer--right,
+  &--pointer--left {
     &::before {
       content: svg-load('arrow-down.svg', fill=$text-color, width=100%, height=100%);
       width: 17px;
@@ -14,11 +15,14 @@
     }
   }
 
+  &--pointer--right {
+    &::before {
+      transform: rotate(90deg);
+    }
+  }
+
   &--pointer--left {
     &::before {
-      content: svg-load('arrow-down.svg', fill=$text-color, width=100%, height=100%);
-      width: 17px;
-      display: inline-block;
       transform: rotate(-90deg);
     }
   }

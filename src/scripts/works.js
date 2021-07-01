@@ -17,7 +17,7 @@ const display = {
   computed: {
     reversedWorks() {
       const works = [...this.works];
-      return works.slice(0, 3).reverse();
+      return works.reverse();
     }
   }
 };
