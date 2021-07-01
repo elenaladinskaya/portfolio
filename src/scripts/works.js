@@ -1,17 +1,17 @@
 import Vue from "vue";
 
-
 const thumbs = {
   props: ["works", "currentWork"],
   template: "#preview-thumbs"
 };
 
 const btns = {
+  props: ["isDisabledNext", "isDisabledPrev"],
   template: "#preview-btns",
 };
 
 const display = {
-  props: ["currentWork", "works", "currentIndex"],
+  props: ["currentWork", "works", "isDisabledNext", "isDisabledPrev", "currentIndex"],
   template: "#preview-display",
   components: { thumbs, btns },
   computed: {
@@ -45,25 +45,17 @@ new Vue({
   data() {
     return {
       works: [],
-      currentIndex: 0
+      currentIndex: 0,
+      isDisabledNext: false,
+      isDisabledPrev: true
     };
   },
   computed: {
     currentWork() {
-      return this.works[0];
-    }
-  },
-  watch: {
-    currentIndex(value) {
-      this.makeInfitineLoopForIndex(value);
+      return this.works[this.currentIndex];
     }
   },
   methods: {
-    makeInfitineLoopForIndex(index) {
-      const worksNumber = this.works.length - 1;
-      if (index < 0) this.currentIndex = worksNumber;
-      if (index > worksNumber) this.currentIndex = 0;
-    },
     requireImagesToArray(data) {
       return data.map(item => {
         const requiredImage = require(`../images/content/portfolio/${item.photo}`).default;
@@ -72,17 +64,29 @@ new Vue({
       });
     },
     slide(direction) {
-      const lastItem = this.works[this.works.length - 1];
       switch (direction) {
         case "next":
-          this.works.push(this.works[0]);
-          this.works.shift();
-          this.currentIndex++;
+          if (this.works.length - 1 < this.currentIndex + 1) {
+            this.isDisabledNext = true;
+          } else if (this.currentIndex === this.works.length - 2) {
+            this.isDisabledNext = true;
+            this.currentIndex++
+          } else {
+            this.isDisabledPrev = false;
+            this.currentIndex++
+          }
           break;
         case "prev":
-          this.works.unshift(lastItem);
-          this.works.pop();
-          this.currentIndex--;
+          if (this.currentIndex === 0) {
+            this.isDisabledPrev = true;
+          } else if (this.currentIndex === 1) {
+            this.isDisabledPrev = true;
+            this.currentIndex--
+          }
+          else {
+            this.isDisabledNext = false;
+            this.currentIndex--
+          }
           break;
       }
     },

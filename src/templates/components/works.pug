@@ -2,8 +2,10 @@ script(type="text/x-template")#preview-container
   .works-preview
     display(
        :currentWork = "currentWork",  
-       :works = "works", 
-       :currentIndex="currentIndex",
+       :works = "works",
+       :isDisabledNext = "isDisabledNext",
+       :isDisabledPrev = "isDisabledPrev",
+       :currentIndex = "currentIndex",
        @slide="slide"
     ) 
     info(
@@ -14,14 +16,16 @@ script(type="text/x-template")#preview-display
   .works-preview__pictures(:data-slide="currentIndex + 1")
     img(:src="currentWork.photo").works-preview__img
     .works-preview__thumbs 
-        thumbs(
+      thumbs(
             :works = "reversedWorks",
             :currentWork = "currentWork",
         ) 
     .works-preview__btns
-        btns(
-          @slide="$emit('slide', $event)"
-        ) 
+      btns(
+        @slide="$emit('slide', $event)",
+        :isDisabledNext = "isDisabledNext",
+        :isDisabledPrev = "isDisabledPrev",
+      )
        
 script(type="text/x-template")#preview-thumbs
   ul.thumbs 
@@ -29,18 +33,20 @@ script(type="text/x-template")#preview-thumbs
         v-for="slide in works" :key="slide.id"
         :class="{active: currentWork.id === slide.id}"
     )
-        button.thumbs__link
-            img(:src="slide.photo").thumbs__img
+      button.thumbs__link
+        img(:src="slide.photo").thumbs__img
 
 script(type="text/x-template")#preview-btns
   .square-btns 
     button(
       type="button"
       @click="$emit('slide', 'next')"
+      :class="{disabled: isDisabledNext}"
       ).square-btns__button.square-btns__button--next
     button(
       type="button"
       @click="$emit('slide', 'prev')"
+      :class="{disabled: isDisabledPrev}"
     ).square-btns__button.square-btns__button--prev
 
 script(type="text/x-template")#preview-info
