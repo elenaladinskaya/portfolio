@@ -2,8 +2,6 @@ import Vue from "vue";
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css'
 
-const mediaQuery = window.matchMedia('(max-width: 566px)');
-
 new Vue({
   el: "#slider-component",
   template: "#slider-container",
@@ -11,20 +9,15 @@ new Vue({
     Swiper, SwiperSlide,
   },
   data() {
-    if (mediaQuery.matches) {
-      return {
-        reviews: [],
-        sliderOptions: {
-          slidesPerView: 1,
-          loop: false
-        }
-      }
-    } else {
-      return {
-        reviews: [],
-        sliderOptions: {
-          slidesPerView: 2,
-          loop: false
+    return {
+      reviews: [],
+      sliderOptions: {
+        slidesPerView: 1,
+        loop: true,
+        breakpoints: {
+          566: {
+            slidesPerView: 2,
+          }
         }
       }
     }
