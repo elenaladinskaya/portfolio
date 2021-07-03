@@ -6,26 +6,40 @@ block content
       .container.hero__container 
         header.header
           a.logo(href="#") ЕЛ
-          nav.menu 
-            - const menuItems = ['Обо мне', 'Навыки', 'Работы', 'Отзывы'];
+          nav.menu.header__menu 
+            - 
+              const menuItems = [
+              {name: 'Обо мне',
+              href: '#about'},
+              {name: 'Навыки',
+              href: '#skills'},
+              {name: 'Работы',
+              href: '#works'},
+              {name: 'Отзывы',
+              href: '#reviews'}
+              ];
             ul.menu__list
               for item in menuItems 
                 li.menu__item 
-                  a(href="#").menu__link #{item} 
+                  a(href=item.href).menu__link #{item.name}
 
             - const socials = ['insta', 'vk', 'github', 'envelope'];
-          ul.socials 
+          ul.socials.header__socials 
               for item in socials 
                 li.socials__item 
                   a(href="#", target="_blank").socials__link   
                    +icon(item, "socials__icon")
+          a(href="#")#hamburger.hamburger
+            span.hamburger__plank
+            span.hamburger__plank
+            span.hamburger__plank
         .userinfo 
             .userinfo__title Личный сайт#[br]веб-разработчика
             h1.userinfo__name Елена#[br]Ладинская 
 
         .hero__bottom-btns 
             button.scroll-down-btn Скролл
-    section.about
+    section#about.about
       .container.about__container
         .about__wrap
           .about__user 
@@ -48,7 +62,7 @@ block content
             .about__desc Привет, меня зовут
             h2.about__title Елена Ладинская
             .about__text-info 
-              p Я занимаюсь разработкой современных сайтов и приложений. #[br] Мне нравится делать интересные и современные проекты.
+              p Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
             .about__quote Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
   .middle-section 
     .triangles.middle-section__triangles-top
@@ -56,140 +70,42 @@ block content
         polygon(points="0,0 0,100 1000,100")
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-right
         polygon(points="0,100 1000,100 1000,0")
-    section.values 
+    section#skills.values 
       .container.values__container 
         .values__title
-          h3.values__title-text Чем я могу быть полезна вам
-          .values__content 
-            p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-        .values__widget 
-          - 
-            const skillsCat = [
-              ['Front-end', [
-                {
-                  name: 'HTML5',
-                  val: '25'
-                }, 
-                {
-                  name: 'CSS3',
-                  val: '15'
-                },
-                {
-                  name: 'Javascript',
-                  val: '75'
-                },
-                {
-                  name: 'Jquery и Vue.js',
-                  val: '25'
-                }
-                ]],
-              ['Workflow', [
-                {
-                  name: 'GIT',
-                  val: '15'
-                },
-                {
-                  name: 'Terminal',
-                  val: '25'
-                },
-                {
-                  name: 'Gulp',
-                  val: '50'
-                },
-                {
-                  name: 'Webpack',
-                  val: '45'
-                }
-                ]]
-              ];
-          ul.skills 
-            each category in skillsCat 
-              li.skills__item 
-                .skills-row 
-                  .skills-row__title #{category[0]}
-                  ul.skills-row__list 
-                    each skill in category[1] 
-                      li.skills-row__item
-                        .skill 
-                          svg(viewBox="0 0 100 100").skill__circle-shape
-                            circle(cx='50' cy='50' r='40').skill__circle.skill__circle--layer-under
-                            circle(cx='50' cy='50' r='40' stroke='url(#gradient)' transform="rotate(180 50 50)").skill__circle.skill__circle--layer-above
-                            linearGradient(id='gradient' x1='0%' y1='0%' x2='100%' y2='0%')
-                              stop(offset='0%' stop-color='#7C00EA')            
-                              stop(offset='100%' stop-color='#4A00ED') 
-                          .skill__title #{skill.name}  
-    section.works 
+          .values__title-container
+            h3.values__title-text Чем я могу быть полезна вам
+            .values__content 
+              p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        .values__widget
+          .values__widget-container 
+            #skills-component  
+    section#works.works 
       .container.works__container 
         h2.section-title.works__section-title Мои работы
-        .works__content 
-          .works-preview
-            .works-preview__pictures(data-slide="2")
-              +image("content/portfolio/site1.jpg", "works-preview__img")
-              .works-preview__thumbs 
-                ul.thumbs 
-                  - for (let i = 4; i > 0; i--)
-                    li.thumbs__item 
-                      a(href="#").thumbs__link
-                        +image(`content/portfolio/site${i}.jpg`, "thumbs__img")
-              .works-preview__btns 
-                .square-btns 
-                  button(type="button").square-btns__item.square-btns__item--next
-                  button(type="button").square-btns__item.square-btns__item--prev
-            .works-preview__info 
-              - const tags = ['HTML', 'CSS', 'Javascript'];
-              ul.tags
-                each tag in tags
-                  li.tags__item
-                    .tag= tag
-              h3.works-preview__title Сайт школы образования
-              .works-preview__desc
-                p Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-              a(href="#", target="_blank").iconed-link Посмотреть сайт
+        .works__content
+          #preview-component
     .triangles.middle-section__triangles-bottom.triangles--pointed-down
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-left 
         polygon(points="0,0 0,100 1000,100")
       svg(viewBox='0 0 1000 100' preserveAspectRatio='none').triangles__shape.triangles__shape--position-right
         polygon(points="0,100 1000,100 1000,0")
-  section.reviews 
+  section#reviews.reviews 
     .container.reviews__container 
-      .slider 
-        .slider__header 
-          h2.section-title.reviews__section-title Что обо мне говорят
-          .slider__btns
-            button(type="button").slider__btn.round-btn.round-btn--pointer--right
-            button(type="button").slider__btn.round-btn.round-btn--pointer--left
-        ul.slider__content 
-          -                  
-            const users = [
-              ['content/avatars/avatar1.jpg', 'Ковальчук Дмитрий', 'Основатель Loftschool', 'Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!'],
-              ['content/avatars/avatar2.jpg', 'Владимир Сабанцев', 'Преподаватель', 'Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах']
-            ];    
-          each user in users
-            li.slider__item
-              .quote
-                .quote__text 
-                  p= user[3]
-                .quote__user
-                    .user-display 
-                      .user-display__avatar 
-                        .user-display__avatar-style 
-                          +image(user[0], "user-display__img")
-                      .user-display__data
-                        .user-display__name= user[1]
-                        .user-display__occupation= user[2] 
+      #slider-component 
   footer.footer
     .container.footer__container.container--footer 
       .footer__copyright
         .footer__date &copy; 2021
         .footer__userinfo
           .footer__name Елена Ладинская
-          .footer__text Личный сайт #[br] веб-разработчика 
+          .footer__text Личный сайт веб-разработчика 
       .footer__data 
         nav.menu.menu--theme-light.footer__data-menu
           ul.menu__list
               for item in menuItems 
                 li.menu__item 
-                  a(href="#").menu__link #{item}
+                  a(href=item.href).menu__link #{item.name}
         .footer__data-content 
           .footer__data-col
             .footer__data-text
@@ -205,3 +121,33 @@ block content
               .text-quote__text 
                 p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
               .text-quote__author Martin Golding
+
+//- меню для мобильных устройств
+block fullscreen 
+  #mobile-menu.mobile-menu
+    .mobile-menu__wrap
+      a(href="#").mobile-menu__close
+      .mobile-menu__container
+        nav.menu.menu--vertical 
+          ul.menu__list
+            - 
+              const mobileMenuItems = [
+              { name: 'Главная',
+              href: '#'},
+              {name: 'Обо мне',
+              href: '#about'},
+              {name: 'Навыки',
+              href: '#skills'},
+              {name: 'Работы',
+              href: '#works'},
+              {name: 'Отзывы',
+              href: '#reviews'}
+              ];
+            each item in mobileMenuItems
+              li.menu__item 
+                a(href=item.href).menu__link #{item.name} 
+        ul.socials 
+          each item in socials 
+            li.socials__item 
+              a(href="#", target="_blank").socials__link   
+                +icon(item, "socials__icon")

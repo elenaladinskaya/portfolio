@@ -1,5 +1,11 @@
 .middle-section {
   position: relative;
+  padding: 140px 0;
+
+  @include phones {
+    padding: 40px 0;
+  }
+
 }
 
 .middle-section__triangles-top {
@@ -7,6 +13,18 @@
   height: 110px;
   position: absolute;
   bottom: 100%;
+
+  @include desktop {
+    height: 60px;
+  }
+
+  @include tablets {
+    height: 56px;
+  }
+
+  @include phones {
+    height: 18px;
+  }
 }
 
 .middle-section__triangles-bottom {
@@ -14,4 +32,16 @@
   height: 110px;
   position: absolute;
   top: 100%;
+
+  @include desktop {
+    height: 80px;
+  }
+
+  @include tablets {
+    height: 56px;
+  }
+
+  @include phones {
+    height: 18px;
+  }
 }

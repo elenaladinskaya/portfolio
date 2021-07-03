@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "text": "Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!",
+    "name": "Ковальчук Дмитрий",
+    "photo": "avatar1.jpg",
+    "occ": "Основатель Loftschool"
+  },
+  {
+    "id": 1,
+    "text": "Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах",
+    "name": "Владимир Сабанцев",
+    "photo": "avatar2.jpg",
+    "occ": "Преподаватель"
+  },
+  {
+    "id": 2,
+    "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio vero sequi quasi vitae voluptatem laborum!",
+    "name": "Ковальчук Дмитрий",
+    "photo": "avatar1.jpg",
+    "occ": "Основатель Loftschool"
+  },
+  {
+    "id": 3,
+    "text": "Perspiciatis incidunt quas quidem necessitatibus assumenda dolore at, dolorem quaerat nemo nisi consectetur eius! Officia deserunt pariatur ullam nobis odit soluta veritatis.",
+    "name": "Владимир Сабанцев",
+    "photo": "avatar2.jpg",
+    "occ": "Преподаватель"
+  }
+]

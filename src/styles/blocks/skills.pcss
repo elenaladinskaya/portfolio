@@ -2,4 +2,20 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+
+  @include tablets {
+    align-items: center;
+  }
+}
+
+.skills__item {
+  margin-bottom: 36px;
+
+  @include phones {
+    margin-bottom: 56px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }

@@ -4,21 +4,63 @@
   justify-content: center;
   align-items: center;
   padding: 57px 0;
+
+  @include tablets {
+    height: 100%;
+    padding: 20% 0;
+  }
+
+  @include phones {
+    padding: 26% 0 40% 4%;
+  }
 }
 
 .about__wrap {
   display: flex;
   width: 66%;
+
+  @include desktop {
+    width: 100%;
+  }
+
+  @include phones {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .about__user {
   width: 42%;
   margin-right: 50px;
+
+  @include desktop {
+    margin-right: 0;
+  }
+
+  @include tablets {
+    width: 46%;
+  }
+
+  @include phones {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
 }
 
 .about__content {
   flex: 1;
   padding-top: 9px;
+
+  @include desktop {
+    padding-right: 8%;
+  }
+
+  @include tablets {
+    padding-right: 0;
+    padding-top: 0;
+  }
 }
 
 .about__desc {
@@ -26,20 +68,44 @@
   font-weight: 600;
   color: rgba(70, 78, 98, 0.8);
   margin-bottom: 20px;
+
+  @include tablets {
+    margin-bottom: 10px;
+  }
+
+  @include phones {
+    margin-bottom: 4px;
+  }
 }
 
 .about__title {
   font-size: 36px;
   font-weight: 700;
   color: $text-color;
-  margin-bottom: 30px;
+  margin-bottom: 14px;
+
+  @include tablets {
+    margin-bottom: 36px;
+  }
+
+  @include phones {
+    line-height: 1.2;
+  }
 }
 
 .about__text-info {
   font-weight: 600;
   line-height: 1.9;
   color: rgba(70, 78, 98, 0.8);
-  margin-bottom: 78px;
+  margin-bottom: 92px;
+
+  @include tablets {
+    margin-bottom: 36px;
+  }
+
+  @include phones {
+    margin-bottom: 64PX;
+  }
 }
 
 .about__quote {
@@ -55,5 +121,16 @@
     left: -55px;
     font-size: 48px;
     color: rgba(219, 2, 0, 0.5);
+
+    @include tablets {
+      content: '*';
+      font-size: 54px;
+    }
+
+    @include phones {
+      font-size: 42px;
+      left: -36px;
+      top: -16px;
+    }
   }
 }

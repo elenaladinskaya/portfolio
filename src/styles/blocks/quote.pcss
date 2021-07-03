@@ -1,14 +1,32 @@
 .quote {
-  padding-left: 20px;
+  padding-left: 20%;
   position: relative;
+
+  @include tablets {
+    padding-left: 12%;
+  }
+
+  @media (max-width: 566px) {
+    padding-left: 0;
+  }
 
   &::before {
     content: svg-load("quote.svg", fill=#DDE3EC, width=100%, height=100%);
     display: block;
-    width: 76px;
+    width: 15%;
     height: auto;
     position: absolute;
-    right: 100%;
+    top: 0;
+    left: 0;
+
+    @include tablets {
+      top: 3%;
+      width: 10%;
+    }
+
+    @media (max-width: 566px) {
+      display: none;
+    }
   }
 }
 
@@ -17,4 +35,8 @@
   line-height: 1.9;
   color: rgba($text-color, .6);
   margin-bottom: 32px;
+
+  @include phones {
+    margin-bottom: 18px;
+  }
 }

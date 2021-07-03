@@ -7,19 +7,53 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include tablets {
+    height: 100%;
+  }
 }
 
 .works__section-title {
   margin-bottom: 84px;
+
+  @include tablets {
+    margin-bottom: 50px;
+  }
+
+  @include phones {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 28px;
+  }
 }
 
 .works-preview {
   display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @include tablets {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 }
 
 .works-preview__pictures {
-  max-width: 975px;
+  width: 66%;
   position: relative;
+
+  @include desktop {
+    width: 57%;
+  }
+
+  @include tablets {
+    width: 92%;
+    margin-bottom: 55PX;
+  }
+
+  @include phones {
+    width: 100%;
+  }
 
   &::before {
     content: attr(data-slide);
@@ -27,10 +61,23 @@
     font-size: 400px;
     font-weight: 800;
     color: #DDE3EC;
-    top: 6%;
-    line-height: 1;
+    bottom: 16%;
+    line-height: 0.8;
     right: -160px;
     z-index: -10;
+
+    @include desktop {
+      font-size: 300PX;
+      right: -120px;
+    }
+
+    @include tablets {
+      bottom: 0;
+    }
+
+    @include phones {
+      display: none;
+    }
   }
 }
 
@@ -44,17 +91,51 @@
   bottom: 0;
   width: 178px;
   z-index: 10;
+
+  @include desktop {
+    width: 116px;
+  }
+
+  @include tablets {
+    width: 134px;
+  }
+
+  @include phones {
+    display: none;
+  }
 }
 
 .works-preview__btns {
   position: absolute;
   top: 100%;
   right: 0;
+
+  @include phones {
+    top: auto;
+    bottom: 0;
+  }
 }
 
 .works-preview__info {
-  padding: 0 0 0 160px;
-  flex: 1;
+  width: 24%;
+
+  @include desktop {
+    width: 32%;
+  }
+
+  @include tablets {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 18%;
+  }
+
+  @include phones {
+    align-items: start;
+    padding: 0 8%;
+  }
 }
 
 .works-preview__title {
@@ -62,6 +143,16 @@
   font-weight: 700;
   color: $text-color;
   margin-bottom: 36px;
+
+  @include tablets {
+    margin-bottom: 12px;
+  }
+
+  @include phones {
+    font-size: 28px;
+    text-align: left;
+    margin-bottom: 8px;
+  }
 }
 
 .works-preview__desc {
@@ -69,4 +160,12 @@
   line-height: 1.9;
   color: rgba($text-color, .8);
   margin-bottom: 42px;
+
+  @include tablets {
+    margin-bottom: 32px;
+  }
+
+  @include phones {
+    text-align: left;
+  }
 }
