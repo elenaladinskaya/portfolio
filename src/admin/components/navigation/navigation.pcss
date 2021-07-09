@@ -1,0 +1,31 @@
+.navigation-container {
+  margin-bottom: 4px;
+}
+
+.list {
+  display: flex;
+}
+
+.link {
+  padding: 28px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #414C63;
+  display: block;
+  font-weight: 600;
+
+  &:hover {
+    color: #383BCF;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background-color: #383BCF;
+    }
+  }
+}

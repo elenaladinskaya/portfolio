@@ -18,10 +18,11 @@ export default {
   props: {
     title: {
       type: String,
-      default: "" 
+      default: "",
     },
-    simple: Boolean
-  }
+    simple: Boolean,
+    slim: Boolean,
+  },
 };
 </script>
 
