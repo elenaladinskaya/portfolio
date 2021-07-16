@@ -16,6 +16,7 @@
   "devDependencies": {
     "@babel/core": "^7.10.5",
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.14.5",
     "@babel/preset-env": "^7.3.1",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-backgrounds": "^5.3.19",
@@ -62,6 +63,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@babel/runtime": "^7.14.6",
     "axios": "^0.21.1",
     "normalize.css": "^8.0.1",
     "promptly": "^3.0.3",
