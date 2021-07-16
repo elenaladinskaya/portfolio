@@ -1,7 +1,7 @@
 <template lang="pug">
 .about-page-component
   .page-content
-    .container
+    .container(v-if="categories.length")
       .header
         .title Блок «Обо мне»
         iconed-btn(
@@ -12,14 +12,21 @@
         )
       ul.skills
         li.item(v-if="emptyCatIsShown")
-          category(empty, @remove="emptyCatIsShown = false")
+          category(
+            empty,
+            @remove="emptyCatIsShown = false",
+            @approve="createCategory"
+          )
         li.item(v-for="category in categories", :key="category.id")
           category(:title="category.category", :skills="category.skills")
+    .container(v-else)
+      .loading Загрузка...
 </template>
 
 <script>
 import iconedBtn from "../../components/button/button.vue";
 import category from "../../components/category/category.vue";
+import { mapActions, mapState } from "vuex";
 
 export default {
   components: {
@@ -28,12 +35,30 @@ export default {
   },
   data() {
     return {
-      categories: [],
       emptyCatIsShown: false,
     };
   },
+  computed: {
+    ...mapState("categories", {
+      categories: (state) => state.data,
+    }),
+  },
+  methods: {
+    ...mapActions({
+      createCategoryAction: "categories/create",
+      fetchCategoryesAction: "categories/fetch",
+    }),
+    async createCategory(categoryTitle) {
+      try {
+        await this.createCategoryAction(categoryTitle);
+        this.emptyCatIsShown = false;
+      } catch (error) {
+        console.log(error.message);
+      }
+    },
+  },
   created() {
-    this.categories = require("../../data/categories.json");
+    this.fetchCategoryesAction();
   },
 };
 </script>
