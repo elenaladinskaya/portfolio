@@ -16,7 +16,7 @@ card(slim)
           @approve="$emit('edit-skill', $event)"
         )
     .bottom-line
-      skillAddLine(:blocked="empty")
+      skillAddLine(@approve="$emit('create-skill', $event)", :blocked="empty")
 </template>
 
 <script>

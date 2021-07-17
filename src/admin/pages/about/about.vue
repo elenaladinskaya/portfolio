@@ -18,7 +18,13 @@
             @approve="createCategory"
           )
         li.item(v-for="category in categories", :key="category.id")
-          category(:title="category.category", :skills="category.skills")
+          category(
+            :title="category.category",
+            :skills="category.skills",
+            @create-skill="createSkill($event, category.id)",
+            @edit-skill="editSkill",
+            @remove-skill="removeSkill"
+          )
     .container(v-else)
       .loading Загрузка...
 </template>
@@ -47,7 +53,27 @@ export default {
     ...mapActions({
       createCategoryAction: "categories/create",
       fetchCategoryesAction: "categories/fetch",
+      addSkillAction: "skills/add",
+      removeSkillAction: "skills/remove",
+      editSkillAction: "skills/edit",
     }),
+    async createSkill(skill, categoryId) {
+      const newSkill = {
+        ...skill,
+        category: categoryId,
+      };
+      await this.addSkillAction(newSkill);
+
+      skill.title = "";
+      skill.percent = "";
+    },
+    removeSkill(skill) {
+      this.removeSkillAction(skill);
+    },
+    async editSkill(skill) {
+      await this.editSkillAction(skill);
+      skill.editmode = false;
+    },
     async createCategory(categoryTitle) {
       try {
         await this.createCategoryAction(categoryTitle);

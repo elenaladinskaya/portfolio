@@ -1,10 +1,10 @@
 <template lang="pug">
-.skill-component(v-if="editmode === false")
+.skill-component(v-if="currentSkill.editmode === false")
   .title {{ skill.title }}
   .percent {{ skill.percent }} %
   .buttons
-    icon.btn(symbol="pencil", grayscale, @click="editmode = true")
-    icon.btn(symbol="trash", grayscale, @click="$emit('remove', skill.id)")
+    icon.btn(symbol="pencil", grayscale, @click="currentSkill.editmode = true")
+    icon.btn(symbol="trash", @click="$emit('remove', currentSkill)", grayscale)
 .skill-component(v-else)
   .title
     app-input(noSidePaddings, v-model="currentSkill.title")
@@ -18,7 +18,7 @@
     )
   .buttons
     icon.btn(symbol="tick", @click="$emit('approve', currentSkill)")
-    icon.btn(symbol="cross", @click="editmode = false")
+    icon.btn(symbol="cross", @click="currentSkill.editmode = false")
 </template>
 
 <script>
@@ -40,6 +40,8 @@ export default {
         id: this.skill.id,
         title: this.skill.title,
         percent: this.skill.percent,
+        category: this.skill.category,
+        editmode: false,
       },
     };
   },
