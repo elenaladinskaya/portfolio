@@ -1,0 +1,53 @@
+@import "../../../styles/mixins.pcss";
+
+.login-page-component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('~images/content/bg/mountain-baloon.jpg') center top / cover no-repeat;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(45, 60, 78, 0.9);
+  }
+}
+
+.form {
+  position: relative;
+}
+
+.form-title {
+  font-size: 36px;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.content {
+  position: relative;
+}
+
+.row {
+  margin-bottom: 35px;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+.form {
+  width: 563px;
+  padding: 47px 80px 72px;
+  background: #fff;
+}

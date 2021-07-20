@@ -21,7 +21,7 @@ defaultView.story = {
 }
 
 export const complexView = () => ({
-  components: {card},
+  components: { card },
   template: `
     <card>
       <h1 slot="title">Заголовок</h1> 
@@ -46,4 +46,17 @@ export const simpleView = () => ({
 
 simpleView.story = {
   name: "Упрощенный вид"
+}
+
+export const slimView = () => ({
+  components: { card },
+  template: `
+    <card slim>
+      <h1>Содержимое</h1>
+    </card>
+  `,
+});
+
+slimView.story = {
+  name: "С маленькими отступами"
 }
